@@ -2,7 +2,7 @@
 #define win_h
 #include <QtGui>
 
-#include <QWidget>
+#include <QtWidgets>
 
 class Win:public QWidget // класс окна
 {
