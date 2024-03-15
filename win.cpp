@@ -1,6 +1,6 @@
 #include "win.h"
 
-Win::Win(QWidget *parent):QWidget(parent)
+Win::Win(QWidget *parent):QWidget(parent) // конструктор
 {
     codec = QTextCodec::codecForName("Windows-1251");
     setWindowTitle(codec->toUnicode("Возведение в квадрат"));
@@ -19,6 +19,7 @@ Win::Win(QWidget *parent):QWidget(parent)
                                  this);
     exitButton = new QPushButton(codec->toUnicode("Выход"),
                                  this);
+
     // компоновка приложения выполняется согласно рисунку 2.
     QVBoxLayout *vLayout1 = new QVBoxLayout(frame);
     vLayout1->addWidget(inputLabel);
@@ -34,12 +35,12 @@ Win::Win(QWidget *parent):QWidget(parent)
     hLayout->addWidget(frame);
     hLayout->addLayout(vLayout2);
     begin();
-    connect(exitButton,SIGNAL(clicked(bool)),
-            this,SLOT(close()));
-    connect(nextButton,SIGNAL(clicked(bool)),
-            this,SLOT(begin()));
-    connect(inputEdit,SIGNAL(returnPressed()),
-            this,SLOT(calc()));
+    connect(exitButton, SIGNAL(clicked(bool)),
+            this, SLOT(close()));
+    connect(nextButton, SIGNAL(clicked(bool)),
+            this, SLOT(begin()));
+    connect(inputEdit, SIGNAL(returnPressed()),
+            this, SLOT(calc()));
 }
 void Win::begin()
 {
@@ -54,9 +55,10 @@ void Win::begin()
 }
 void Win::calc()
 {
-    bool Ok=true; float r,a;
-    QString str=inputEdit->text();
-    a=str.toDouble(&Ok);
+    bool Ok=true;
+    float r, a;
+    QString str = inputEdit->text();
+    a = str.toDouble(&Ok);
     if (Ok)
     {
         r=a*a;

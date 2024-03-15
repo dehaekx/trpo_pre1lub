@@ -4,7 +4,7 @@
 
 #include <QtWidgets>
 
-class Win:public QWidget // класс окна
+class Win: public QWidget // класс окна
 {
     Q_OBJECT // макрос Qt, обеспечивающий корректное создание сигналов и слотов
 protected:
@@ -22,7 +22,8 @@ public slots:
     void begin(); // метод начальной настройки интерфейса
     void calc(); // метод реализации вычислений
 };
-class StrValidator:public QValidator // класс компонента проверки ввода
+
+class StrValidator: public QValidator // класс компонента проверки ввода
 {
 public:
     StrValidator(QObject *parent):QValidator(parent){}
