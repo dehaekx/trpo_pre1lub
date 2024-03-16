@@ -8,7 +8,7 @@ class Win: public QWidget // класс окна
 {
     Q_OBJECT // макрос Qt, обеспечивающий корректное создание сигналов и слотов
 protected:
-    QTextCodec *codec;
+    //QTextCodec *codec;
     QFrame *frame; // рамка
     QLabel *inputLabel; // метка ввода
     QLineEdit *inputEdit; // строчный редактор ввода
