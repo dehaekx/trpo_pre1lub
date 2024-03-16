@@ -35,12 +35,17 @@ Win::Win(QWidget *parent):QWidget(parent) // конструктор
     hLayout->addWidget(frame);
     hLayout->addLayout(vLayout2);
     begin();
-    connect(exitButton, SIGNAL(clicked(bool)),
-            this, SLOT(close()));
-    connect(nextButton, SIGNAL(clicked(bool)),
-            this, SLOT(begin()));
-    connect(inputEdit, SIGNAL(returnPressed()),
-            this, SLOT(calc()));
+    // connect(exitButton,SIGNAL(clicked(bool)),
+    //         this,SLOT(close()));
+    connect(exitButton, &QPushButton::clicked, this, &Win::close);
+
+    // connect(nextButton,SIGNAL(clicked(bool)),
+    //         this,SLOT(begin()));
+    connect(nextButton, &QPushButton::clicked, this, &Win::begin);
+
+    // connect(inputEdit,SIGNAL(returnPressed()),
+    //         this,SLOT(calc()));
+    connect(inputEdit, &QLineEdit::returnPressed, this, &Win::calc);
 }
 void Win::begin()
 {
