@@ -1,5 +1,5 @@
 #include "win.h"
-
+sddscsdcdscsd
 Win::Win(QWidget *parent):QWidget(parent) // конструктор
 {
     codec = QTextCodec::codecForName("Windows-1251");
