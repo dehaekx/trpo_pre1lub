@@ -33,6 +33,8 @@ Win::Win(QWidget *parent): QWidget(parent) // конструктор, котор
     hLayout->addWidget(frame); // Добавление объекта frame в компоновку hLayout
     hLayout->addLayout(vLayout2); // Добавление компоновки vLayout2 в hLayout
     begin();
+
+
     // connect(exitButton,SIGNAL(clicked(bool)),
     //         this,SLOT(close()));
     // Установка соединения между событием "клик по кнопке exitButton" и методом close()
@@ -48,7 +50,8 @@ Win::Win(QWidget *parent): QWidget(parent) // конструктор, котор
     // Установка соединения между событием "ввод текста и нажатие Enter в inputEdit" и методом calc()
     connect(inputEdit, &QLineEdit::returnPressed, this, &Win::calc);
 }
-void Win::begin()
+
+void Win::begin() // метод начальной настройки компонент на ввод
 {
     inputEdit->clear(); // очищает поле ввода
     nextButton->setEnabled(false); // недоступность nextButton
@@ -65,20 +68,20 @@ void Win::calc()
     bool Ok=true;
     float r, a;
     QString str = inputEdit->text();
-    a = str.toDouble(&Ok);
+    a = str.toDouble(&Ok); // if преоразование произошло успешно, то Ok остается true
     if (Ok)
     {
         r=a*a;
         str.setNum(r);
-        outputEdit->setText(str);
-        inputEdit->setEnabled(false);
-        outputLabel->setVisible(true);
-        outputEdit->setVisible(true);
-        nextButton->setDefault(true);
-        nextButton->setEnabled(true);
-        nextButton->setFocus();
+        outputEdit->setText(str); // выводим в поле вывода вычисленное число
+        inputEdit->setEnabled(false); // нельзя изменять поле ввода после вычисления
+        outputLabel->setVisible(true); // поле с лайблом "результат" видно
+        outputEdit->setVisible(true); // поле с выводом видно
+        nextButton->setDefault(true); // выделяется кнопа Следующее
+        nextButton->setEnabled(true); // поле Следующее доступно для нажатия
+        nextButton->setFocus(); // выделяется кнопка Следующее
     }
-    else
+    else // иначе если преобразование не прошло успешно, то ...
         if (!str.isEmpty())
         {
             QMessageBox msgBox(QMessageBox::Information,
