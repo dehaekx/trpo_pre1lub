@@ -3,21 +3,21 @@
 Win::Win(QWidget *parent): QWidget(parent) // конструктор, который создает объеты и строит пользовательское окно
 {
     setWindowTitle(("Возведение в квадрат")); // Установливаем заголовок окна
-    frame = new QFrame(this); // Создаем объекта QFrame
+    frame = new QFrame(this); // Создаем объекта QFrame                                         //* Зачем передавать this
     frame->setFrameShadow(QFrame::Raised); // Установливаем стиль тени для рамки объекта QFrame
     frame->setFrameShape(QFrame::Panel); // Установливаем форму рамки объекта QFrame
 
     inputLabel = new QLabel(("Введите число:"), this); // Создаем объект QLabel с текстом "Введите число"
     inputEdit = new QLineEdit("", this); // Создаем объект QLineEdit для ввода текста
     StrValidator *v = new StrValidator(inputEdit); // Создаем объект валидатора для проверки вводимых данных
-    inputEdit->setValidator(v);
+    inputEdit->setValidator(v);                                                                 //* Что за метод setValidator()
     outputLabel = new QLabel(("Результат:"), this); // Созданем объект QLabel с текстом "Результат"
     outputEdit = new QLineEdit("", this); // Создаем объект QLineEdit для отображения результата вычислений
     nextButton = new QPushButton(("Следующее"), this); // Создаем кнопки "Следующее"
     exitButton = new QPushButton(("Выход"), this); // создаем кнопку выход
 
     // компоновка приложения выполняется согласно рисунку 2.
-    QVBoxLayout *vLayout1 = new QVBoxLayout(frame); // Создаем вертикальную компоновку для объекта frame
+    QVBoxLayout *vLayout1 = new QVBoxLayout(frame); // Создаем вертикальную компоновку для объекта frame //* What is it?
     vLayout1->addWidget(inputLabel); // Добавляем объект inputLabel в компоновку vLayout1
     vLayout1->addWidget(inputEdit);
     vLayout1->addWidget(outputLabel);
