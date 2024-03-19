@@ -1,9 +1,9 @@
-#include "win.h"
+#include "window.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    Win win(0);
+    QApplication appl(argc, argv);
+    Window win;
     win.show();
-    return app.exec();
+    return appl.exec();
 }
