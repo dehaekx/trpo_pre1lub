@@ -1,4 +1,5 @@
 #include "area.h"
+
 Area::Area(QWidget *parent):QWidget(parent)
 {
     setFixedSize(QSize(300,200));

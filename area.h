@@ -1,4 +1,9 @@
+#ifndef area_h
+#define area_h
 #include "figura.h"
+
+#include <QtWidgets>
+
 class Area : public QWidget
 {
     int myTimer; // идентификатор таймера
@@ -16,3 +21,5 @@ protected:
     void hideEvent(QHideEvent *event);
 };
 #endif
+
+

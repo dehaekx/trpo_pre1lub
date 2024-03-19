@@ -1,5 +1,6 @@
 #include <math.h>
 #include "figura.h"
+
 void Figura::move(float Alpha,QPainter *Painter)
 {
     dx=halflen*cos(Alpha);

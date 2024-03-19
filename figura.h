@@ -1,6 +1,7 @@
 #ifndef figura_h
 #define figura_h
-#include <QtGui>
+#include <QPainter>
+
 class Figura
 {
 protected:
