@@ -37,7 +37,7 @@ Win::Win(QWidget *parent): QWidget(parent) // конструктор, котор
 
     // connect(exitButton,SIGNAL(clicked(bool)),
     //         this,SLOT(close()));
-    // Установка соединения между событием "клик по кнопке exitButton" и методом close()
+    // Установка соединения между событием "клик по кнопке сигналом - exitButton" и объектом this класса Win методом close()
     connect(exitButton, &QPushButton::clicked, this, &Win::close);
 
     // connect(nextButton,SIGNAL(clicked(bool)),
@@ -68,7 +68,7 @@ void Win::calc()
     bool Ok=true;
     float r, a;
     QString str = inputEdit->text();
-    a = str.toDouble(&Ok); // if преоразование произошло успешно, то Ok остается true
+    a = str.toDouble(&Ok); // if преоразование произошло успешно, то Ok остается true (ф-я входной аргумент является указателем, поэтому &)
     if (Ok)
     {
         r=a*a;
