@@ -3,7 +3,7 @@
 Win::Win(QWidget *parent): QWidget(parent) // конструктор, который создает объеты и строит пользовательское окно
 {
     setWindowTitle(("Возведение в квадрат")); // Установливаем заголовок окна
-    frame = new QFrame(this); // Создаем объекта QFrame                                         //* Зачем передавать this
+    frame = new QFrame(this); // Создаем объекта QFram    //* Зачем передавать this
     frame->setFrameShadow(QFrame::Raised); // Установливаем стиль тени для рамки объекта QFrame
     frame->setFrameShape(QFrame::Panel); // Установливаем форму рамки объекта QFrame
 

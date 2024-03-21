@@ -31,6 +31,13 @@ public:
     StrValidator(QObject *parent):QValidator(parent){}
     virtual State validate(QString &str,int &pos)const // Зачем метод и const
     {
+        auto msg = QMessageBox(
+            QMessageBox::Information,
+            "alert",
+            "Вызван метод validate",
+            QMessageBox::Ok
+        );
+        msg.exec();
         return Acceptable; // метод всегда принимает вводимую строку
     }
 };
