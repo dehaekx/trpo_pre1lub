@@ -29,7 +29,7 @@ class StrValidator: public QValidator // класс компонента про�
 {
 public:
     StrValidator(QObject *parent):QValidator(parent){}
-    virtual State validate(QString &str,int &pos)const // Зачем метод и const
+    State validate(QString &str,int &pos)const override // Зачем метод и const
     {
         auto msg = QMessageBox(
             QMessageBox::Information,
