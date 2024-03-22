@@ -22,7 +22,7 @@ Win::Win(QWidget *parent): QWidget(parent) // конструктор, котор
     vLayout1->addWidget(inputEdit);
     vLayout1->addWidget(outputLabel);
     vLayout1->addWidget(outputEdit);
-    vLayout1->addStretch(); // Добавляем упругий интервал в компоновку vLayout1
+    vLayout1->addStretch(); // Добавляем упругий интервал в компоновку vLayout1 thisтекущэкземпояпкласса
 
     QVBoxLayout *vLayout2 = new QVBoxLayout(); // Создаем вертикальную компоновку vLayout2
     vLayout2->addWidget(nextButton); // Добавление кнопки nextButton в компоновку vLayout2
