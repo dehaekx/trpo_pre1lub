@@ -7,10 +7,12 @@ void Figura::move(float Alpha,QPainter *Painter)
     dy=halflen*sin(Alpha);
     draw(Painter);
 }
+
 void MyLine::draw(QPainter *Painter)
 {
     Painter->drawLine(x+dx,y+dy,x-dx,y-dy);
 }
+
 void MyRect::draw(QPainter *Painter)
 {
     Painter->drawLine(x+dx,y+dy,x+dy,y-dx);

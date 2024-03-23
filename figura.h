@@ -1,6 +1,7 @@
 #ifndef figura_h
 #define figura_h
-#include <QPainter>
+#include <QPainter> //объект этого класса получает доступ к фрагменту экрана,
+                    //отведенном под окно, в котором выполняется рисование
 
 class Figura
 {
