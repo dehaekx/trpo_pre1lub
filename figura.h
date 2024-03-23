@@ -16,14 +16,15 @@ public:
 class MyLine:public Figura
 {
 protected:
-    void draw(QPainter *Painter);
+    void draw(QPainter *Painter) override;
 public:
     MyLine(int x,int y,int halflen):Figura(x,y,halflen){}
 };
+
 class MyRect:public Figura
 {
 protected:
-    void draw(QPainter *Painter);
+    void draw(QPainter *Painter) override;
 public:
     MyRect(int x,int y,int halflen):Figura(x,y,halflen){}
 };
