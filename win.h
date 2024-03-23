@@ -9,7 +9,7 @@ class Counter:public QLineEdit
 public:
     Counter(const QString & contents, QWidget *parent=0):QLineEdit(contents,parent)
     {
-        //setReadOnly(true);//не нужно редактирование поля
+        setReadOnly(true);//не нужно редактирование поля
     }
 signals: // раздел сигналов класса
     void tick_signal();
