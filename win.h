@@ -33,7 +33,7 @@ public:
     {
         auto msg = QMessageBox(
             QMessageBox::Information,
-            "alert",
+            "Предупреждение",
             "Вызван метод validate",
             QMessageBox::Ok
         );

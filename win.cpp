@@ -5,7 +5,10 @@ Win::Win(QWidget *parent): QWidget(parent) // конструктор, котор
     setWindowTitle(("Возведение в квадрат")); // Установливаем заголовок окна
     frame = new QFrame(this); // Создаем объекта QFram    //* Зачем передавать this
     frame->setFrameShadow(QFrame::Raised); // Установливаем стиль тени для рамки объекта QFrame
+                                           // рамка и содержимое кажутся приподнятыми;
+                                           //рисует трехмерную рельефную линию, используя светлые и темные цвета текущей цветовой группы
     frame->setFrameShape(QFrame::Panel); // Установливаем форму рамки объекта QFrame
+                                         // QFrame рисует панель, чтобы содержимое выглядело приподнятым или затонувшим.
 
     inputLabel = new QLabel("Введите число:", this); // Создаем объект QLabel с текстом "Введите число"
     inputEdit = new QLineEdit("", this); // Создаем объект QLineEdit для ввода текста
@@ -23,6 +26,7 @@ Win::Win(QWidget *parent): QWidget(parent) // конструктор, котор
     vLayout1->addWidget(outputLabel);
     vLayout1->addWidget(outputEdit);
     vLayout1->addStretch(); // Добавляем упругий интервал в компоновку vLayout1 thisтекущэкземпояпкласса
+                            // Добавляет растягиваемое пространство с нулевым минимальным размером и фактором растяжения stretch в конец данного компоновщика.
 
     QVBoxLayout *vLayout2 = new QVBoxLayout(); // Создаем вертикальную компоновку vLayout2
     vLayout2->addWidget(nextButton); // Добавление кнопки nextButton в компоновку vLayout2
@@ -31,23 +35,23 @@ Win::Win(QWidget *parent): QWidget(parent) // конструктор, котор
 
     QHBoxLayout *hLayout = new QHBoxLayout(this); // Создание горизонтальной компоновки hLayout
     hLayout->addWidget(frame); // Добавление объекта frame в компоновку hLayout
-    hLayout->addLayout(vLayout2); // Добавление компоновки vLayout2 в hLayout
+    hLayout->addLayout(vLayout2); // Добавление компоновки vLayout2 в hLayout (Добавляет ячейку с компоновщиком layout в конец ячеек, с фактором растяжения stretch)
     begin();
 
 
     // connect(exitButton,SIGNAL(clicked(bool)),
     //         this,SLOT(close()));
-    // Установка соединения между событием "клик по кнопке сигналом - exitButton" и объектом this класса Win методом close()
+    // Установка соединения между сигналом clicked от кнопки exitbutton и слотом close в объекте класса Win
     connect(exitButton, &QPushButton::clicked, this, &Win::close);
 
     // connect(nextButton,SIGNAL(clicked(bool)),
     //         this,SLOT(begin()));
-    // Установка соединения между событием "клик по кнопке nextButton" и методом begin() // сигнал сначала потом слот
+    // Установка соединения между сигналом clicked от кнопки nextbutton и слотом begin в объекте класса Win // сигнал сначала потом слот
     connect(nextButton, &QPushButton::clicked, this, &Win::begin);
 
     // connect(inputEdit,SIGNAL(returnPressed()),
     //         this,SLOT(calc()));
-    // Установка соединения между событием "ввод текста и нажатие Enter в inputEdit" и методом calc()
+    // Установка соединения между сигналом returnPressed от виджета inputEdit и слотом calc в объекте класса Win
     connect(inputEdit, &QLineEdit::returnPressed, this, &Win::calc);
 }
 
