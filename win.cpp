@@ -29,8 +29,11 @@ Win::Win(QWidget *parent):QWidget(parent)
     layout4->addLayout(layout3);
 
     // связь сигнала нажатия кнопки и слота закрытия окна
+    // Установка соединения между сигналом clicked от кнопки calcbutton и слотом add_one в объекте класса Counter
     connect(calcbutton, &QPushButton::clicked, edit1, &Counter::add_one);
+    // Установка соединения между сигналом tick_signal от объекта edit1 и слотом add_one в объекте класса Counter
     connect(edit1, &Counter::tick_signal, edit2, &Counter::add_one);
+    // Установка соединения между сигналом clicked от кнопки exitbutton и слотом close в объекте класса Win
     connect(exitbutton, &QPushButton::clicked, this, &Win::close);
 
     //connect(calcbutton,SIGNAL(clicked(bool)), edit1,SLOT(add_one()));
