@@ -15,10 +15,10 @@ public:
     MyRect *myrect;
 protected:
     // обработчики событий
-    void paintEvent(QPaintEvent *event);
-    void timerEvent(QTimerEvent *event);
-    void showEvent(QShowEvent *event);
-    void hideEvent(QHideEvent *event);
+    void paintEvent(QPaintEvent *event); // Метод, который вызывается при необходимости перерисовки виджета, происходит рисование элементов
+    void timerEvent(QTimerEvent *event); // Метод, который вызывается при срабатывании таймера, обрабатываются события таймера
+    void showEvent(QShowEvent *event); // Показ виджета
+    void hideEvent(QHideEvent *event); // скрытие виджета
 };
 #endif
 
