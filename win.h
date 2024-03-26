@@ -20,8 +20,8 @@ public slots:
         int r=str.toInt();
         if (r!=0 && r%5 ==0) emit tick_signal(); // отправляет сигнал в tick_signal если % 5 == 0
         r++;
-        str.setNum(r);
-        setText(str);
+        str.setNum(r); // в строку
+        setText(str); // Устанавливаем новое строковое значение в поле ввода
     }
 };
 
