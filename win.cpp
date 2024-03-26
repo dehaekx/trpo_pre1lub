@@ -10,5 +10,6 @@ Window::Window()
     layout->addWidget(area);
     layout->addWidget(btn);
     //connect(btn, SIGNAL(clicked(bool)),this,SLOT(close()));
+    // Устанавливаем сигнала clicked кнопки btn и слотом close объекта qwidget(this)
     connect(btn, &QPushButton::clicked, this, &QWidget::close);
 };

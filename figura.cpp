@@ -3,9 +3,9 @@
 
 void Figura::move(float Alpha,QPainter *Painter)
 {
-    dx=halflen*cos(Alpha);
+    dx=halflen*cos(Alpha); // Рассчитывает изменения
     dy=halflen*sin(Alpha);
-    draw(Painter);
+    draw(Painter); // отрисовки фигуры с учетом новых координат
 }
 
 void MyLine::draw(QPainter *Painter)
